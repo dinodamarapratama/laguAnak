@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+  <script src="js/jquery-1.10.2.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/jquery.mobile-1.4.2.min.js"></script>
+  <link rel="stylesheet" href="css/jqm-demos.css">
+  <script type="text/javascript" src="http://dinodamarapratama.github.io/laguAnak.json"></script>
+</head>
+
+<body onload="load()" class="ui-mobile-viewport ui-overlay-a">
+  <div data-role="page" id="home" class="jqm-demos jqm-home" style="background-image:url('images/bg.png'); background-attachment: fixed; background-size: cover;">
+    <div data-role="header">
+      <p style="white-space: normal;color:#fff;font-size:12px;font-weight:50px;margin: 0 5em 0 5em;text-align: center;" role="heading" class="ui-title">Aplikasi Video Lagu
+				<br>Anak - Anak</p>
+      <a href="index.html" data-icon="back" data-ajax="false" data-iconpos="notext">Search</a>
+    </div>
+    <div role="main" align="center">
+      <ul id="daftar_video" data-role="listview" data-inset="false" data-theme="a" data-inset="true">
+      </ul>
+    </div>
+  </div>
+</body>
+<script>
+  function load() {
+    for (var i = 0; i < data.length; i++) {
+      document.getElementById("daftar_video").innerHTML +=
+        "<li><a data-ajax='false' href='keterangan.html?id="+i+"'><p style='white-space: normal;font-weight:bold'>" + data[i].nama + "</p><p style='white-space: normal;font-size:10px'>" + data[i].keterangan + "</p></a></li>";
+      $('#daftar_video').listview('refresh');
+
+    }
+  }
+</script>
+
+</html>
